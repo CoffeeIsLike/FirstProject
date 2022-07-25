@@ -40,7 +40,7 @@
 	<insert id="insert" parameterType="noticeDto">
 		INSERT INTO notice_board
 		(num,writer,title,content,viewCount,regdate)
-		VALUES(board_cafe_seq.NEXTVAL, #{writer}, #{title},
+		VALUES(notice_board_seq.NEXTVAL, #{writer}, #{title},
 			#{content}, #{viewCount}, SYSDATE)
 	</insert>
 	

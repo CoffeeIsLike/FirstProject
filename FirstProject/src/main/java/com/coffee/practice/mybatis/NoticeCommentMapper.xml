@@ -7,10 +7,10 @@
 			(SELECT result1.*, ROWNUM AS rnum
 			FROM
 				(SELECT num, writer, content, target_id, ref_group,
-					comment_group, deleted, board_cafe_comment.regdate, profile
+					comment_group, deleted, notice_board_comment.regdate, profile
 				FROM notice_board_comment
 				INNER JOIN users
-				ON board_cafe_comment.writer=users.id
+				ON notice_board_comment.writer=users.id
 				WHERE ref_group=#{ref_group}
 				ORDER BY comment_group ASC, num ASC) result1)
 		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}	
